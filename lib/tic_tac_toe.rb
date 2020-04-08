@@ -60,7 +60,7 @@ class TicTacToe
   end
 
   def won?
-    combo = WIN_COMBINATIONS.detect{|combo| (@board[combo[0]] && @board[combo[1]] && @board[combo[2]]) == "X" || @board[combo[0]] && @board[combo[1]] && @board[combo[2]] == "O"}
+    combo = WIN_COMBINATIONS.detect{|combo| (@board[combo[0]] && @board[combo[1]] && @board[combo[2]]) == "X" || ()@board[combo[0]] && @board[combo[1]] && @board[combo[2]]) == "O"}
     return combo
   end
 
