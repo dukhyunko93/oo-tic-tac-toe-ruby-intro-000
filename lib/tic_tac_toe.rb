@@ -50,14 +50,19 @@ class TicTacToe
   puts "Please choose a number 1-9:"
   user_input = gets.chomp
   index = input_to_index(user_input)
-  if valid_move?(index)
-    token = current_player
-    move(index,token)
-    display_board
-  else
-    turn
+    if valid_move?(index)
+      token = current_player
+      move(index,token)
+      display_board
+    else
+      turn
+    end
   end
-end
 
+  def won?
+    a = WIN_COMBINATIONS.detect{|combo| @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X"}
+    b = WIN_COMBINATIONS.detect{|combo| @board[combo[0]] == "O" && @board[combo[1]] == "O" && @board[combo[2]] == "O"}
+    return a || b
+  end
 
 end
